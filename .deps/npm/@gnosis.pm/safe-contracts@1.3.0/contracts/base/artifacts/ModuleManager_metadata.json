@@ -1,0 +1,332 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "module",
+						"type": "address"
+					}
+				],
+				"name": "DisabledModule",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "module",
+						"type": "address"
+					}
+				],
+				"name": "EnabledModule",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "module",
+						"type": "address"
+					}
+				],
+				"name": "ExecutionFromModuleFailure",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "module",
+						"type": "address"
+					}
+				],
+				"name": "ExecutionFromModuleSuccess",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "prevModule",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "module",
+						"type": "address"
+					}
+				],
+				"name": "disableModule",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "module",
+						"type": "address"
+					}
+				],
+				"name": "enableModule",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "enum Enum.Operation",
+						"name": "operation",
+						"type": "uint8"
+					}
+				],
+				"name": "execTransactionFromModule",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "enum Enum.Operation",
+						"name": "operation",
+						"type": "uint8"
+					}
+				],
+				"name": "execTransactionFromModuleReturnData",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "returnData",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "start",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pageSize",
+						"type": "uint256"
+					}
+				],
+				"name": "getModulesPaginated",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "array",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address",
+						"name": "next",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "module",
+						"type": "address"
+					}
+				],
+				"name": "isModuleEnabled",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Stefan George - <stefan@gnosis.pm>Richard Meissner - <richard@gnosis.pm>",
+			"kind": "dev",
+			"methods": {
+				"disableModule(address,address)": {
+					"details": "Allows to remove a module from the whitelist.      This can only be done via a Safe transaction.",
+					"params": {
+						"module": "Module to be removed.",
+						"prevModule": "Module that pointed to the module to be removed in the linked list"
+					}
+				},
+				"enableModule(address)": {
+					"details": "Allows to add a module to the whitelist.      This can only be done via a Safe transaction.",
+					"params": {
+						"module": "Module to be whitelisted."
+					}
+				},
+				"execTransactionFromModule(address,uint256,bytes,uint8)": {
+					"details": "Allows a Module to execute a Safe transaction without any further confirmations.",
+					"params": {
+						"data": "Data payload of module transaction.",
+						"operation": "Operation type of module transaction.",
+						"to": "Destination address of module transaction.",
+						"value": "Ether value of module transaction."
+					}
+				},
+				"execTransactionFromModuleReturnData(address,uint256,bytes,uint8)": {
+					"details": "Allows a Module to execute a Safe transaction without any further confirmations and return data",
+					"params": {
+						"data": "Data payload of module transaction.",
+						"operation": "Operation type of module transaction.",
+						"to": "Destination address of module transaction.",
+						"value": "Ether value of module transaction."
+					}
+				},
+				"getModulesPaginated(address,uint256)": {
+					"details": "Returns array of modules.",
+					"params": {
+						"pageSize": "Maximum number of modules that should be returned.",
+						"start": "Start of the page."
+					},
+					"returns": {
+						"array": "Array of modules.",
+						"next": "Start of the next page."
+					}
+				},
+				"isModuleEnabled(address)": {
+					"details": "Returns if an module is enabled",
+					"returns": {
+						"_0": "True if the module is enabled"
+					}
+				}
+			},
+			"title": "Module Manager - A contract that manages modules that can execute transactions via this contract",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"disableModule(address,address)": {
+					"notice": "Disables the module `module` for the Safe."
+				},
+				"enableModule(address)": {
+					"notice": "Enables the module `module` for the Safe."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/base/ModuleManager.sol": "ModuleManager"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/base/Executor.sol": {
+			"keccak256": "0xacaaa807268513181d973c120a28ff3780cb2350e4cbdd648cba3c7ae0209d86",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://458a211a145598bb328cedb72fbd57eda47119a6bd34e7848b1a86addc6822d3",
+				"dweb:/ipfs/QmXw6c53GGULQW7iZnL7cctq99QA7LzGPMRMXm4GKivw4V"
+			]
+		},
+		".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/base/ModuleManager.sol": {
+			"keccak256": "0xd4d9fca2c6c4d4bc52d4f7b638f1d7aafcd922091e324825f06f832a93ecef5d",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://c08be83873bdc5df6a8588fc4ba67ef9c9b66f252177c6d232b670a16532e6db",
+				"dweb:/ipfs/QmSP5WY2X1ktAJGgv1xXExrQ5rtTYJBLfLtjXs986V1Hxb"
+			]
+		},
+		".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/common/Enum.sol": {
+			"keccak256": "0x473e45b1a5cc47be494b0e123c9127f0c11c1e0992a321ae5a644c0bfdb2c14f",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://948e6d5a8bd7377f7795b6e28584eab9be5c0a8db240bf5e606744a175238c3d",
+				"dweb:/ipfs/QmQQaUmQfpuejV41jbxKSTgEBYYCcVTjCsDMgf2htgz6ej"
+			]
+		},
+		".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/common/SelfAuthorized.sol": {
+			"keccak256": "0x59d36efca578b75541a776f62a0d0ef03712fc27b6647c3915c14b572106d7bc",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://8530c6e0392415d42486847cd4368d30f6cac42051596330692a571fcdbb9e29",
+				"dweb:/ipfs/QmWw51Pshw5t2sMKANzxtfNdBSQUyQQpfTr3Mi7oNJGk7U"
+			]
+		}
+	},
+	"version": 1
+}

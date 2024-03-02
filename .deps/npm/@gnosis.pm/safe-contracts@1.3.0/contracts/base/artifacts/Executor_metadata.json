@@ -1,0 +1,55 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"author": "Richard Meissner - <richard@gnosis.pm>",
+			"kind": "dev",
+			"methods": {},
+			"title": "Executor - A contract that can execute transactions",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/base/Executor.sol": "Executor"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/base/Executor.sol": {
+			"keccak256": "0x1726872f7654ee3d269836e0461af343fa259a6958136a7542a872cf446428b6",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://7145a60c44872a0f5a61bbe5fc7b2072cd8c6d834f28cd7ee5d625b2686e8f95",
+				"dweb:/ipfs/QmZcFdP6uTWjputLtztU8wALyjcLvCHEPCMNWFgkjhNUGX"
+			]
+		},
+		".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/common/Enum.sol": {
+			"keccak256": "0x473e45b1a5cc47be494b0e123c9127f0c11c1e0992a321ae5a644c0bfdb2c14f",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://948e6d5a8bd7377f7795b6e28584eab9be5c0a8db240bf5e606744a175238c3d",
+				"dweb:/ipfs/QmQQaUmQfpuejV41jbxKSTgEBYYCcVTjCsDMgf2htgz6ej"
+			]
+		}
+	},
+	"version": 1
+}

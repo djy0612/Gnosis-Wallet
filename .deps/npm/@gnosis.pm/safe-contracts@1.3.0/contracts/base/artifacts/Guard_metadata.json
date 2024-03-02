@@ -1,0 +1,143 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "txHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"name": "checkAfterExecution",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "enum Enum.Operation",
+						"name": "operation",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "safeTxGas",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "baseGas",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "gasPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "gasToken",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "refundReceiver",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signatures",
+						"type": "bytes"
+					},
+					{
+						"internalType": "address",
+						"name": "msgSender",
+						"type": "address"
+					}
+				],
+				"name": "checkTransaction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/base/GuardManager.sol": "Guard"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/base/GuardManager.sol": {
+			"keccak256": "0x022fdad8454a442e9942782913116c28a5002dcc831df37b1f3e2f199acde856",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://58fed0b0221b09e46f940942f612e077464badb0d3a72bb4f0de27d1579b45dc",
+				"dweb:/ipfs/Qmdsv4WfQJ9vh7vZgPCvDQ2yerJ7MWnAouSWNBMmG3Meqm"
+			]
+		},
+		".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/common/Enum.sol": {
+			"keccak256": "0x473e45b1a5cc47be494b0e123c9127f0c11c1e0992a321ae5a644c0bfdb2c14f",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://948e6d5a8bd7377f7795b6e28584eab9be5c0a8db240bf5e606744a175238c3d",
+				"dweb:/ipfs/QmQQaUmQfpuejV41jbxKSTgEBYYCcVTjCsDMgf2htgz6ej"
+			]
+		},
+		".deps/npm/@gnosis.pm/safe-contracts@1.3.0/contracts/common/SelfAuthorized.sol": {
+			"keccak256": "0x59d36efca578b75541a776f62a0d0ef03712fc27b6647c3915c14b572106d7bc",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://8530c6e0392415d42486847cd4368d30f6cac42051596330692a571fcdbb9e29",
+				"dweb:/ipfs/QmWw51Pshw5t2sMKANzxtfNdBSQUyQQpfTr3Mi7oNJGk7U"
+			]
+		}
+	},
+	"version": 1
+}
